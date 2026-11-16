@@ -29,9 +29,7 @@ claude plugin install remotion@edicao-video
 claude plugin install hyperframes@edicao-video
 ```
 
-Depois, reinicie o Claude Code.
-
-> Se o repositório for **privado**, você precisa ter sido convidado e estar logado no GitHub neste computador (`gh auth login` ou credenciais do git).
+Depois, reinicie o Claude Code. Não precisa de conta no GitHub para instalar.
 
 ### 2. Programas necessários
 - [Node.js](https://nodejs.org) 18 ou mais novo
