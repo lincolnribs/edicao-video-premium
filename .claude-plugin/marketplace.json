@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-marketplace.json",
+  "name": "edicao-video",
+  "owner": {
+    "name": "Equipe de Edição"
+  },
+  "description": "Edição de vídeo premium com Claude Code: Remotion, limpeza de voz (DeepFilterNet), lettering cinético, SFX e trilha.",
+  "plugins": [
+    {
+      "name": "edicao-video-premium",
+      "displayName": "Edição de Vídeo Premium",
+      "source": "./plugins/edicao-video-premium",
+      "description": "Padrão de edição de Reels/Stories: organização de pastas, limpeza de voz, corte de silêncios, lettering, SFX e trilha.",
+      "version": "1.0.0",
+      "category": "Design",
+      "keywords": ["video", "remotion", "reels", "edicao", "deepfilternet"]
+    },
+    {
+      "name": "remotion",
+      "displayName": "Remotion",
+      "source": { "source": "github", "repo": "remotion-dev/claude-code-plugin" },
+      "description": "Skills oficiais do Remotion (ferramenta principal de edição).",
+      "category": "Design"
+    },
+    {
+      "name": "hyperframes",
+      "displayName": "HyperFrames",
+      "source": { "source": "github", "repo": "heygen-com/hyperframes" },
+      "description": "HyperFrames by HeyGen (usado para recortar a pessoa do fundo e quando pedirem HyperFrames).",
+      "category": "Design"
+    }
+  ]
+}
