@@ -8,7 +8,36 @@ Plugin que ensina o Claude Code a editar vídeos verticais (Reels, Stories, TikT
 - **SFX e trilha** do Mixkit, com volumes medidos (voz a -14 LUFS)
 - **Organização automática** de pastas: estúdio, biblioteca de efeitos sonoros, músicas e uma pasta por cliente
 
-## Instalação
+## Instalação em 1 passo
+
+Cole este link no chat do Claude Code e escreva **"instala isso"**:
+
+```
+https://github.com/lincolnribs/edicao-video-premium
+```
+
+O Claude faz o resto (passos abaixo). Se preferir instalar à mão, veja "Instalação manual".
+
+## Instruções para o Claude (instalação automática)
+
+Se o usuário te mandou este link pedindo para instalar, faça nesta ordem, explicando cada passo em uma linha e pedindo permissão antes de baixar ou instalar programas:
+
+1. **Plugins:** rode no terminal
+   ```
+   claude plugin marketplace add lincolnribs/edicao-video-premium
+   claude plugin install edicao-video-premium@edicao-video
+   claude plugin install remotion@edicao-video
+   claude plugin install hyperframes@edicao-video
+   ```
+2. **Se o comando `claude` não existir no terminal:** instale só a skill copiando a pasta:
+   ```
+   git clone --depth 1 https://github.com/lincolnribs/edicao-video-premium "<pasta temporária>/edicao-video-premium"
+   ```
+   e copie `plugins/edicao-video-premium/skills/edicao-video-premium` para `~/.claude/skills/edicao-video-premium`. Depois peça ao usuário para digitar no chat `/plugin marketplace add remotion-dev/claude-code-plugin` e `/plugin install remotion@remotion` (o Remotion é obrigatório).
+3. **Programas:** confira Node.js, Python, ffmpeg e DeepFilterNet seguindo `plugins/edicao-video-premium/skills/edicao-video-premium/references/instalacao.md`. Liste o que falta e instale só com a permissão do usuário (no Windows, prefira `winget`).
+4. **Final:** diga ao usuário para reiniciar o Claude Code e, depois, pedir **"prepara meu estúdio de edição"**.
+
+## Instalação manual
 
 ### 1. Adicionar o marketplace e instalar os plugins
 No Claude Code, digite um comando por vez:
