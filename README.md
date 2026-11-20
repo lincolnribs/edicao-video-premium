@@ -26,7 +26,7 @@ Depois, reinicie o Claude Code. Não precisa de conta no GitHub.
 
 ## O que ele faz
 
-| | |
+| Recurso | Como funciona |
 |---|---|
 | 🎙️ **Voz limpa** | Tira eco, ruído e pancadas (DeepFilterNet, local) e corta os silêncios. |
 | ✂️ **Cortes que não pulam** | Decupagem dos takes, punch-in alternado e cor corrigida take a take. |
