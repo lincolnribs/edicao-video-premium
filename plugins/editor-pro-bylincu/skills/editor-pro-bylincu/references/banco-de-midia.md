@@ -44,4 +44,4 @@ Baixe 3 a 5 sons por categoria para `_biblioteca/sfx/<categoria>/` e rode `pytho
 - Voz: ≈ -14 LUFS integrado, estéreo.
 - SFX: ≈ 30% do nível da voz (≈ -8 a -10 dB abaixo; com voz a -14 LUFS, SFX perto de -24 a -26 LUFS). Todos no mesmo nível. Pico alinhado à ação na tela (+1 frame).
 - Trilha: ≈ 0.07 a 0.11 de volume no Remotion sob a voz (≈ -30 a -33 LUFS), fade-in curto, fade-out no fechamento; pode subir um pouco onde não há fala.
-- Medir: `ffmpeg -i final.mp4 -af ebur128 -f null -` (linha "I:" no resumo). Para medir um trecho só: `-ss <ini> -t <dur>` antes do `-i`.
+- Medir: `python scripts/medir.py final.mp4` (uma linha com LUFS, pico e faixa). Trecho: `--ini <s> --dur <s>`. Nunca rode `ebur128` direto (imprime milhares de linhas).

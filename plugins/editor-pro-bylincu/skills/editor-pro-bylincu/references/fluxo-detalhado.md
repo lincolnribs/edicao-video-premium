@@ -19,13 +19,19 @@ ffmpeg -i "take.MOV" -vf "scale=1080:1920:force_original_aspect_ratio=increase:i
   `zscale=t=linear:npl=100,format=gbrpf32le,zscale=p=bt709,tonemap=hable:desat=0,zscale=t=bt709:m=bt709:r=tv,format=yuv420p`.
 - Take deitado sem metadado de rotação: `transpose=1` (horário) ou `transpose=2` (anti-horário). Entrelaçado: `yadif` no início.
 
-**Contact sheet** (1 quadro a cada 2 s, grade 5 colunas):
-```bash
-ffmpeg -i public/media/take01.mp4 -vf "fps=1/2,scale=216:-1,tile=5x4" -frames:v 1 .work/sheet-take01.jpg
-```
-Olhe as sheets para separar falas x b-roll, achar tomadas ruins e saber onde fica o rosto.
+Todo ffmpeg com `-v error` (sem o log de progresso).
 
-**Transcrever** cada fala com Whisper (skill `remotion-captions`) e salvar o JSON de palavras com tempo.
+**Folha de contato** (uma imagem pequena por take, até 20 quadros):
+```bash
+python scripts/folha.py public/media/take01.mp4          # imprime só o caminho da imagem
+```
+Olhe cada folha uma vez para separar falas x b-roll, achar tomadas ruins e saber onde fica o rosto.
+
+**Transcrever** cada fala com Whisper (skill `remotion-captions`), salvar o JSON e converter para texto curto:
+```bash
+python scripts/transcricao.py public/media/take01.json   # gera take01.txt: "[00:01.2-00:03.8] frase"
+```
+Leia o `.txt`, nunca o JSON de palavras.
 
 ## 2. Decupagem
 `takes.txt`, uma linha por trecho escolhido (segundos), na ordem do vídeo:
@@ -48,7 +54,7 @@ ffmpeg -i broll.mp4 -vf "vidstabtransform=input=.work/t.trf:smoothing=25:zoom=3,
 
 ## 4. Voz e base
 ```bash
-python <skill>/scripts/limpar_voz.py --lista takes.txt -o public/media/base.mp4 --cortar-silencios --respiro 0.14 --escala 1080x1920
+python scripts/limpar_voz.py --lista takes.txt -o public/media/base.mp4 --cortar-silencios --respiro 0.14 --escala 1080x1920
 ```
 - Gera `base.mp4` (voz limpa, -14 LUFS, estéreo) + `base.cortes.json` (trechos mantidos: `arquivo`, `inicio`, `fim`, `quadro_saida`, `quadros`). Um momento `t` do take original vira o quadro `quadro_saida + (t - inicio) * 30` na base.
 - Retranscreva `base.mp4` e compare com a transcrição dos takes: mesma contagem de palavras por frase. Confira que nenhum corte caiu dentro do nome da marca (ajuste o fim da palavra no `takes.txt` se preciso).
@@ -67,10 +73,11 @@ const drift = interpolate(frame, [0, duracao], [0, 0.015]);
 `transformOrigin` perto dos olhos mantém o rosto no lugar.
 
 ## 6. Mapa do rosto
-Renderize um still de cada plano com pessoa com uma grade por cima (linhas a cada 100 px) e anote a faixa vertical do rosto (ex.: y 290 a 630). Texto só acima da cabeça ou abaixo do queixo (peito/roupa); alterne entre os dois por cena. Depois do punch-in, confira de novo (a escala move o rosto).
+Gere um quadro de cada enquadramento com pessoa, com grade a cada 100 px, e anote a faixa vertical do rosto (ex.: y 290 a 630). Texto só acima da cabeça ou abaixo do queixo (peito/roupa), sempre dentro das margens seguras (220 px em cima, 450 px embaixo, 35 px nas laterais). Depois do punch-in, confira de novo (a escala move o rosto).
 ```bash
-npx remotion still src/index.ts <Comp> .work/still-120.png --frame=120 --scale=0.5
+python scripts/folha.py public/media/base.mp4 --em 4.0 --grade   # 1 quadro pequeno com grade
 ```
+Anote a faixa do rosto num comentário do código para não precisar abrir a imagem de novo.
 Card que precisa ficar atrás da pessoa: `npx hyperframes remove-background` só no trecho necessário (corte o trecho antes), mesmo zoom do plano, e empilhe: vídeo → card → pessoa recortada.
 
 ## 7. Ritmo
@@ -106,9 +113,10 @@ Copie para `public/` só os SFX/músicas usados. Depois do render, meça e ajust
 
 ## 10. Conferência e render
 ```bash
-npx remotion render src/index.ts <Comp> .work/preview.mp4 --scale=0.4
-ffmpeg -i .work/preview.mp4 -vf "fps=1,scale=180:-1,tile=6x6" -frames:v 1 .work/sheet-preview.jpg
-npx remotion render src/index.ts <Comp> "../entregas/<Cliente> - <Titulo>.mp4"
-ffmpeg -i "../entregas/<Cliente> - <Titulo>.mp4" -af ebur128 -f null -
+python scripts/render.py <Comp> .work/preview.mp4 --preview
+python scripts/folha.py .work/preview.mp4
+python scripts/render.py <Comp> "../entregas/<Cliente> - <Titulo>.mp4"
+python scripts/medir.py "../entregas/<Cliente> - <Titulo>.mp4"
 ```
+O `render.py` guarda o log em `.work/render.log` e só mostra as últimas linhas se der erro.
 Passe o checklist do `SKILL.md`, atualize `LEIAME.md` e `historico.md`, e mostre ao usuário onde está o arquivo.

@@ -11,7 +11,8 @@ Confira cada item antes de editar. Se algo faltar, diga ao usuário o que é e p
 
 ## 2. Plugins e skills do Claude Code
 - **Remotion** (obrigatório): plugin `remotion` do marketplace oficial do Remotion. Traz `remotion-best-practices`, `remotion-create`, `remotion-captions`, `remotion-render` e outras.
-- **HyperFrames** (auxiliar, para `remove-background`): plugin `hyperframes`. O recorte também roda direto com `npx hyperframes remove-background` (lento em CPU: recorte só os trechos necessários).
+- **HyperFrames**: não instale o plugin só por causa do recorte. Ele adiciona cerca de 20 skills à lista que entra em toda conversa. O recorte de pessoa roda direto com `npx hyperframes remove-background` (lento em CPU: recorte só os trechos necessários).
+- **Economia:** desative plugins e conectores (MCP) que você não usa. A lista de skills e ferramentas de todos eles entra no contexto de toda conversa.
 - **assetseeker** (recomendado): skill de busca de mídia grátis (Mixkit, Pexels, Pixabay, Freesound, Iconify, Google Fonts). Instale pela skill `find-skills` ou pelo marketplace de skills.
 
 > Licença do Remotion: grátis para uso individual e empresas pequenas; empresas maiores precisam de licença de empresa (ver remotion.dev/license). Avise o usuário se ele estiver numa equipe grande.

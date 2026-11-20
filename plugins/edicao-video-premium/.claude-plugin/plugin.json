@@ -1,8 +1,0 @@
-{
-  "name": "edicao-video-premium",
-  "version": "1.0.0",
-  "description": "Edição de vídeo premium com Claude Code: Remotion como padrão, limpeza de voz com DeepFilterNet, corte de silêncios, lettering cinético, SFX, trilha do Mixkit e organização de pastas de clientes.",
-  "author": { "name": "Equipe de Edição" },
-  "keywords": ["video", "remotion", "reels", "edicao", "deepfilternet", "mixkit"],
-  "skills": "./skills/"
-}
