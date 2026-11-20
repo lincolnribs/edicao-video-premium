@@ -11,7 +11,7 @@
       "displayName": "Editor Pro by Lincu",
       "source": "./plugins/editor-pro-bylincu",
       "description": "Edição de Reels/Stories em português: Remotion, limpeza de voz, corte de silêncios, lettering, SFX, trilha e catálogo de skills de vídeo seguras.",
-      "version": "2.0.0",
+      "version": "2.1.0",
       "category": "Design",
       "keywords": ["video", "remotion", "reels", "edicao", "deepfilternet", "portugues"]
     },

@@ -1,65 +1,113 @@
-# Editor Pro by Lincu
+<p align="center">
+  <img src="assets/banner.svg" alt="Editor Pro by Lincu" width="100%">
+</p>
 
-Editor de vídeo profissional em português para o Claude Code. Você manda os brutos, pede **"edita esse vídeo"** e ele entrega o Reels pronto.
+<p align="center">
+  <img alt="versão" src="https://img.shields.io/badge/versão-2.1-FF2E88">
+  <img alt="Claude Code" src="https://img.shields.io/badge/Claude%20Code-plugin-111">
+  <img alt="Remotion" src="https://img.shields.io/badge/Remotion-padrão-0B84F3">
+  <img alt="idioma" src="https://img.shields.io/badge/idioma-português-2EA043">
+  <img alt="custo" src="https://img.shields.io/badge/ferramentas-grátis%20e%20locais-555">
+</p>
 
-- **Ativa sozinho:** reconhece pedidos de edição de vídeo e entra em ação, sem precisar chamar
-- **Remotion** como ferramenta padrão
-- **Limpeza de voz** com DeepFilterNet (eco, ruído, pancadas) e corte automático de silêncios
-- **Lettering cinético** sincronizado à fala, punch-in nos cortes, rosto sempre livre de texto
-- **SFX e trilha** do Mixkit, com volumes medidos (voz a -14 LUFS)
-- **Organização automática** de pastas: estúdio, biblioteca de efeitos, músicas e uma pasta por cliente
-- **Econômico:** scripts que resumem logs, transcrições e imagens para gastar poucos tokens
-- **Catálogo em português** de 526 skills de vídeo com nota de segurança (avatar, clipe, animação, explicativo...)
+<p align="center"><b>Você manda os brutos e pede “edita esse vídeo”. Ele entrega o Reels pronto.</b></p>
 
-## Instalar (1 passo)
+---
 
-Cole este link no chat do Claude Code e escreva **"instala isso"**:
+## Instale em 1 passo
+
+Cole o link no chat do Claude Code e escreva **instala isso**:
 
 ```
 https://github.com/lincolnribs/editor-pro-bylincu
 ```
 
-## Instruções para o Claude (instalação automática)
+Depois, reinicie o Claude Code. Não precisa de conta no GitHub.
 
-Se o usuário te mandou este link pedindo para instalar, faça nesta ordem, explicando cada passo em uma linha e pedindo permissão antes de baixar ou instalar programas:
+## O que ele faz
 
-1. **Plugins:** rode no terminal
-   ```
-   claude plugin marketplace add lincolnribs/editor-pro-bylincu
-   claude plugin install editor-pro-bylincu@bylincu
-   claude plugin install remotion@bylincu
-   ```
-2. **Se o comando `claude` não existir no terminal:** peça ao usuário para digitar no chat, um por vez:
-   `/plugin marketplace add lincolnribs/editor-pro-bylincu`, `/plugin install editor-pro-bylincu@bylincu` e `/plugin install remotion@bylincu`.
-   Sem `/plugin` disponível: `git clone --depth 1 https://github.com/lincolnribs/editor-pro-bylincu` numa pasta temporária e copie `plugins/editor-pro-bylincu/skills/editor-pro-bylincu` para `~/.claude/skills/editor-pro-bylincu` (assim fica sem a ativação automática).
-3. **Programas:** confira Node.js, Python, ffmpeg e DeepFilterNet seguindo `plugins/editor-pro-bylincu/skills/editor-pro-bylincu/references/instalacao.md`. Liste o que falta e instale só com a permissão do usuário (no Windows, prefira `winget`).
-4. **Final:** diga ao usuário para reiniciar o Claude Code e depois mandar o vídeo pedindo **"edita esse vídeo"**.
+| | |
+|---|---|
+| 🎙️ **Voz limpa** | Tira eco, ruído e pancadas (DeepFilterNet, local) e corta os silêncios. |
+| ✂️ **Cortes que não pulam** | Decupagem dos takes, punch-in alternado e cor corrigida take a take. |
+| 🔤 **Lettering cinético** | Texto palavra a palavra, no ritmo da fala, sempre longe do rosto e dentro das margens do Reels. |
+| 🔊 **Som no ponto** | SFX e trilha do Mixkit, com volume medido (voz a -14 LUFS). |
+| 🗂️ **Tudo organizado** | Cria pastas de estúdio, efeitos, músicas e uma por cliente, com a identidade de cada um. |
+| ⚡ **Ativa sozinho** | Reconhece pedidos de edição de vídeo e entra em ação, sem precisar chamar. |
+| 🪶 **Gasta pouco** | Scripts que resumem logs, transcrições e imagens: o Claude lê uma linha, não mil. |
 
-## Instalação manual
+## Como funciona
 
-No Claude Code, um comando por vez:
+1. **Organiza:** cria o estúdio e a pasta do cliente.
+2. **Pergunta uma vez:** cliente, trilha e identidade visual.
+3. **Edita:** triagem, voz, cortes, lettering, som.
+4. **Confere e entrega:** prévia, checklist e MP4 1080x1920 na pasta de entregas.
+
+## Complementos selecionados
+
+Dez skills de terceiros, escolhidas entre 526 de um catálogo com nota de segurança. O editor indica e instala uma delas só quando o pedido precisa, sempre com a sua aprovação.
+
+| Para | Complemento | Licença |
+|---|---|---|
+| Efeitos sobre a pessoa (texto atrás da cabeça) | [claude-video-effects](https://github.com/Vibha-Ramprakash/claude-video-effects) | MIT |
+| Diretor de motion com crítico | [remotion-director](https://github.com/Zane-0x5a/remotion-director) | MIT |
+| Lettering no ritmo da música | [kinetic-typography-skills](https://github.com/iart-ai/kinetic-typography-skills) | MIT |
+| Aberturas e bumpers 9:16 | [bang-motion](https://github.com/bangtutorial/bang-motion) | MIT |
+| Motion sem cara de IA | [motionmaxxing](https://github.com/Tejashmakwana/motionmaxxing) · [motion-graphics-skills](https://github.com/charlie947/motion-graphics-skills) | Apache-2.0 · MIT |
+| Comercial premium com rodadas de crítica | [motion-video-kit](https://github.com/echris6/motion-video-kit) | MIT |
+| Motion em plano-sequência | [onetake](https://github.com/feitangyuan/onetake) | não comercial (Pro pago) |
+| Logo animado | [pixel2motion](https://github.com/nolangz/pixel2motion) | MIT |
+| Ícones animados | [lottie](https://github.com/diffusionstudio/lottie) | MIT |
+
+## Perguntas rápidas
+
+<details>
+<summary><b>Do que eu preciso no computador?</b></summary>
+
+Node.js 18+, Python 3.10+, ffmpeg e o DeepFilterNet 0.5.6. O Claude confere o que falta e instala com a sua permissão.
+</details>
+
+<details>
+<summary><b>Funciona no Windows?</b></summary>
+
+Sim. Foi feito e testado no Windows, e também roda em macOS e Linux.
+</details>
+
+<details>
+<summary><b>Posso usar em vídeos de clientes?</b></summary>
+
+Sim. As ferramentas principais são grátis para uso comercial. O Remotion é grátis para uso individual e para empresas pequenas; empresas maiores precisam de [licença](https://www.remotion.dev/license). Nos complementos, confira a coluna de licença.
+</details>
+
+<details>
+<summary><b>Como atualizo?</b></summary>
+
+`/plugin marketplace update bylincu`
+</details>
+
+<details>
+<summary><b>Instalação manual</b></summary>
 
 ```
 /plugin marketplace add lincolnribs/editor-pro-bylincu
 /plugin install editor-pro-bylincu@bylincu
 /plugin install remotion@bylincu
 ```
+No terminal, troque `/plugin` por `claude plugin`. Para chamar direto: `/editor-pro-bylincu`.
+</details>
 
-No terminal, troque `/plugin` por `claude plugin`. Reinicie o Claude Code depois. Não precisa de conta no GitHub.
+<details>
+<summary><b>Instruções para o Claude (instalação automática)</b></summary>
 
-**Programas:** [Node.js](https://nodejs.org) 18+, [Python](https://www.python.org) 3.10+, [ffmpeg](https://ffmpeg.org) no PATH (Windows: `winget install Gyan.FFmpeg`) e o **DeepFilterNet 0.5.6** ([releases](https://github.com/Rikorose/DeepFilterNet/releases)) salvo em `~/tools/deepfilter/deep-filter.exe` (Windows) ou `~/tools/deepfilter/deep-filter` (macOS/Linux).
+Se o usuário te mandou este link pedindo para instalar, explique cada passo em uma linha e peça permissão antes de baixar ou instalar programas.
 
-## Usar
-- Mande os brutos e peça **"edita esse vídeo"**. Na primeira vez ele cria as pastas (em `~/Videos/Edicao`) e faz só uma rodada de perguntas: cliente, trilha e identidade visual.
-- Também dá para chamar direto com `/editor-pro-bylincu`.
-- Dica de economia: um vídeo por conversa. Ao terminar, use `/compact` ou abra uma conversa nova.
+1. Rode no terminal: `claude plugin marketplace add lincolnribs/editor-pro-bylincu`, `claude plugin install editor-pro-bylincu@bylincu` e `claude plugin install remotion@bylincu`.
+2. Sem o comando `claude`: peça ao usuário para digitar no chat `/plugin marketplace add lincolnribs/editor-pro-bylincu`, `/plugin install editor-pro-bylincu@bylincu` e `/plugin install remotion@bylincu`. Sem `/plugin`: faça `git clone --depth 1` deste repositório numa pasta temporária e copie `plugins/editor-pro-bylincu/skills/editor-pro-bylincu` para `~/.claude/skills/` (fica sem a ativação automática).
+3. Confira Node.js, Python, ffmpeg e DeepFilterNet seguindo `plugins/editor-pro-bylincu/skills/editor-pro-bylincu/references/instalacao.md`. Instale só o que faltar, com permissão (no Windows, prefira `winget`).
+4. Peça para reiniciar o Claude Code e depois mandar o vídeo com **edita esse vídeo**.
+5. Não instale os complementos agora. Eles entram só quando um pedido precisar.
+</details>
 
-## Atualizar
-```
-/plugin marketplace update bylincu
-```
+---
 
-## Créditos e licenças
-- Catálogo de skills adaptado do [Awesome Claude Video Skills](https://github.com/zhuyansen/awesome-claude-video-skills) (CC0). Cada projeto listado tem a própria licença.
-- Remotion: grátis para uso individual e empresas pequenas; empresas maiores precisam de licença ([remotion.dev/license](https://www.remotion.dev/license)).
-- Mixkit: uso comercial grátis, sem atribuição obrigatória. DeepFilterNet: MIT/Apache-2.0.
+<sub>Catálogo de skills adaptado do <a href="https://github.com/zhuyansen/awesome-claude-video-skills">Awesome Claude Video Skills</a> (CC0). Cada projeto listado tem a própria licença. Mixkit: uso comercial grátis. DeepFilterNet: MIT/Apache-2.0.</sub>

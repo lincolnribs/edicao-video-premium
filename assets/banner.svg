@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="400" viewBox="0 0 1280 400" role="img" aria-label="Editor Pro by Lincu">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B0B12"/>
+      <stop offset="1" stop-color="#1B1030"/>
+    </linearGradient>
+    <linearGradient id="acc" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#FF5A36"/>
+      <stop offset="1" stop-color="#FF2E88"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="400" fill="url(#bg)"/>
+  <!-- trilha da linha do tempo -->
+  <g opacity="0.18" fill="#FFFFFF">
+    <rect x="80" y="318" width="190" height="14" rx="7"/>
+    <rect x="282" y="318" width="120" height="14" rx="7"/>
+    <rect x="414" y="318" width="260" height="14" rx="7"/>
+    <rect x="686" y="318" width="90" height="14" rx="7"/>
+    <rect x="788" y="318" width="210" height="14" rx="7"/>
+    <rect x="1010" y="318" width="190" height="14" rx="7"/>
+  </g>
+  <rect x="414" y="318" width="260" height="14" rx="7" fill="url(#acc)"/>
+  <rect x="540" y="296" width="4" height="58" rx="2" fill="#FFFFFF"/>
+  <!-- quadro 9:16 -->
+  <g transform="translate(1040 70)">
+    <rect width="120" height="213" rx="16" fill="none" stroke="url(#acc)" stroke-width="4"/>
+    <path d="M48 84 L82 106 L48 128 Z" fill="#FFFFFF"/>
+  </g>
+  <text x="80" y="150" fill="#FFFFFF" font-family="Inter, Segoe UI, Helvetica, Arial, sans-serif" font-size="76" font-weight="800" letter-spacing="-2">Editor Pro</text>
+  <text x="80" y="205" fill="url(#acc)" font-family="Inter, Segoe UI, Helvetica, Arial, sans-serif" font-size="40" font-weight="700">by Lincu</text>
+  <text x="80" y="258" fill="#C9C6D6" font-family="Inter, Segoe UI, Helvetica, Arial, sans-serif" font-size="26">Brutos entram, Reels profissional sai. Edição de vídeo com o Claude Code, em português.</text>
+</svg>

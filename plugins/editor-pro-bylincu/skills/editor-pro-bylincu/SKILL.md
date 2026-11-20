@@ -56,9 +56,9 @@ Transforma brutos em vídeo vertical pronto para entrega, com padrão premium e 
 - [ ] Voz ≈ -14 LUFS, SFX abaixo da voz, trilha baixa (`medir.py`)
 - [ ] MP4 1080x1920 30 fps, cores sem estourar
 
-## 7. Quando o pedido foge do padrão
-Avatar, clipe musical, animação desenhada, explicativo sem pessoa, logo animado: consulte `references/catalogo-skills.md` (skills de vídeo seguras, em português) e `python scripts/catalogo.py busca "<termo>"`. Só indique repositórios SAFE e nunca instale nada sem o usuário aprovar.
+## 7. Complementos (quando o pedido pede mais)
+Efeito sobre a pessoa, vinheta ou abertura, lettering no ritmo da música, motion em plano-sequência, logo animado, ícone Lottie: veja a tabela de `references/complementos.md` (10 skills selecionadas, com licença e instalação). Fora disso: `references/catalogo-skills.md`. Instale só o complemento do pedido, com a aprovação do usuário, e avise quando a licença não for comercial.
 
 ## Arquivos
 - `scripts/`: `estudio.py` (pastas), `limpar_voz.py` (voz), `medir.py`, `render.py`, `transcricao.py`, `folha.py`, `catalogo.py`
-- `references/`: `instalacao.md`, `fluxo-detalhado.md`, `banco-de-midia.md` (Mixkit, SFX, trilha), `catalogo-skills.md`
+- `references/`: `instalacao.md`, `fluxo-detalhado.md`, `banco-de-midia.md` (Mixkit, SFX, trilha), `complementos.md`, `catalogo-skills.md`
