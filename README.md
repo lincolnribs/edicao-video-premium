@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <img alt="versão" src="https://img.shields.io/badge/versão-2.2-FF2E88">
+  <img alt="versão" src="https://img.shields.io/badge/versão-2.2.1-FF2E88">
   <img alt="Claude Code" src="https://img.shields.io/badge/Claude%20Code-plugin-111">
   <img alt="Remotion" src="https://img.shields.io/badge/Remotion-padrão-0B84F3">
   <img alt="idioma" src="https://img.shields.io/badge/idioma-português-2EA043">

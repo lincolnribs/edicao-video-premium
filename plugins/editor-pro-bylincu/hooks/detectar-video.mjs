@@ -32,9 +32,10 @@ try {
 } catch {}
 
 const aviso =
-  "Pedido de edição de vídeo detectado: carregue a skill editor-pro-bylincu (Skill tool) ANTES de qualquer outra " +
-  "skill de vídeo e siga o fluxo dela, com Remotion como ferramenta padrão. Não carregue as skills do HyperFrames " +
-  "a menos que o usuário peça HyperFrames pelo nome.";
+  "Regra do Editor Pro: em todo pedido de edição de vídeo, carregue primeiro a skill editor-pro-bylincu (Skill tool) " +
+  "e siga o fluxo dela, com Remotion como ferramenta padrão; os complementos do pacote entram só quando ela indicar. " +
+  "As regras do usuário (CLAUDE.md) continuam valendo junto, e o LEIAME.md e o kit de cada cliente definem a " +
+  "identidade visual. Não carregue as skills do HyperFrames a menos que o usuário peça HyperFrames pelo nome.";
 
 // Acentos viram \uXXXX para não depender da codificação do terminal.
 const json = JSON.stringify({ hookSpecificOutput: { hookEventName: "UserPromptSubmit", additionalContext: aviso } })
