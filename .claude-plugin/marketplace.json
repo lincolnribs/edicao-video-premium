@@ -10,16 +10,36 @@
       "name": "editor-pro-bylincu",
       "displayName": "Editor Pro by Lincu",
       "source": "./plugins/editor-pro-bylincu",
-      "description": "Edição de Reels/Stories em português: Remotion, limpeza de voz, corte de silêncios, lettering, SFX, trilha e catálogo de skills de vídeo seguras.",
-      "version": "2.1.0",
+      "description": "Edição de Reels/Stories em português: Remotion, limpeza de voz, corte de silêncios, lettering, SFX, trilha e 8 complementos de motion incluídos.",
+      "version": "2.2.0",
       "category": "Design",
-      "keywords": ["video", "remotion", "reels", "edicao", "deepfilternet", "portugues"]
+      "keywords": [
+        "video",
+        "remotion",
+        "reels",
+        "edicao",
+        "deepfilternet",
+        "portugues"
+      ]
     },
     {
       "name": "remotion",
       "displayName": "Remotion",
-      "source": { "source": "github", "repo": "remotion-dev/claude-code-plugin" },
+      "source": {
+        "source": "github",
+        "repo": "remotion-dev/claude-code-plugin"
+      },
       "description": "Skills oficiais do Remotion (ferramenta principal de edição).",
+      "category": "Design"
+    },
+    {
+      "name": "remotion-director",
+      "displayName": "Remotion Director",
+      "source": {
+        "source": "github",
+        "repo": "Zane-0x5a/remotion-director"
+      },
+      "description": "Diretor de motion em Remotion com ciclo de crítica (complemento do Editor Pro, MIT).",
       "category": "Design"
     }
   ]

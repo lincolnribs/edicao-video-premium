@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <img alt="versão" src="https://img.shields.io/badge/versão-2.1-FF2E88">
+  <img alt="versão" src="https://img.shields.io/badge/versão-2.2-FF2E88">
   <img alt="Claude Code" src="https://img.shields.io/badge/Claude%20Code-plugin-111">
   <img alt="Remotion" src="https://img.shields.io/badge/Remotion-padrão-0B84F3">
   <img alt="idioma" src="https://img.shields.io/badge/idioma-português-2EA043">
@@ -34,7 +34,7 @@ Depois, reinicie o Claude Code. Não precisa de conta no GitHub.
 | 🔊 **Som no ponto** | SFX e trilha do Mixkit, com volume medido (voz a -14 LUFS). |
 | 🗂️ **Tudo organizado** | Cria pastas de estúdio, efeitos, músicas e uma por cliente, com a identidade de cada um. |
 | ⚡ **Ativa sozinho** | Reconhece pedidos de edição de vídeo e entra em ação, sem precisar chamar. |
-| 🪶 **Gasta pouco** | Scripts que resumem logs, transcrições e imagens: o Claude lê uma linha, não mil. |
+| 📉 **Gasta pouco** | Scripts que resumem logs, transcrições e imagens: o Claude lê uma linha, não mil. |
 
 ## Como funciona
 
@@ -43,21 +43,23 @@ Depois, reinicie o Claude Code. Não precisa de conta no GitHub.
 3. **Edita:** triagem, voz, cortes, lettering, som.
 4. **Confere e entrega:** prévia, checklist e MP4 1080x1920 na pasta de entregas.
 
-## Complementos selecionados
+## Complementos incluídos
 
-Dez skills de terceiros, escolhidas entre 526 de um catálogo com nota de segurança. O editor indica e instala uma delas só quando o pedido precisa, sempre com a sua aprovação.
+Nove skills de motion escolhidas entre 526 de um catálogo com nota de segurança. Já vêm no pacote, todas grátis para uso comercial, e o Editor Pro chama cada uma quando o vídeo pede.
 
 | Para | Complemento | Licença |
 |---|---|---|
 | Efeitos sobre a pessoa (texto atrás da cabeça) | [claude-video-effects](https://github.com/Vibha-Ramprakash/claude-video-effects) | MIT |
 | Diretor de motion com crítico | [remotion-director](https://github.com/Zane-0x5a/remotion-director) | MIT |
-| Lettering no ritmo da música | [kinetic-typography-skills](https://github.com/iart-ai/kinetic-typography-skills) | MIT |
+| Lettering no ritmo da música | [kinetic-typography](https://github.com/iart-ai/kinetic-typography-skills) | MIT |
 | Aberturas e bumpers 9:16 | [bang-motion](https://github.com/bangtutorial/bang-motion) | MIT |
-| Motion sem cara de IA | [motionmaxxing](https://github.com/Tejashmakwana/motionmaxxing) · [motion-graphics-skills](https://github.com/charlie947/motion-graphics-skills) | Apache-2.0 · MIT |
+| Motion sem cara de IA | [motionmaxxing](https://github.com/Tejashmakwana/motionmaxxing) | Apache-2.0 |
 | Comercial premium com rodadas de crítica | [motion-video-kit](https://github.com/echris6/motion-video-kit) | MIT |
-| Motion em plano-sequência | [onetake](https://github.com/feitangyuan/onetake) | não comercial (Pro pago) |
+| Motion contínuo, sem corte, na batida | [product-launch-motion](https://github.com/AbubakrChan/product-launch-motion) | MIT |
 | Logo animado | [pixel2motion](https://github.com/nolangz/pixel2motion) | MIT |
 | Ícones animados | [lottie](https://github.com/diffusionstudio/lottie) | MIT |
+
+<sub>Créditos e versões em <a href="THIRD_PARTY_NOTICES.md">THIRD_PARTY_NOTICES.md</a>.</sub>
 
 ## Perguntas rápidas
 
@@ -76,7 +78,7 @@ Sim. Foi feito e testado no Windows, e também roda em macOS e Linux.
 <details>
 <summary><b>Posso usar em vídeos de clientes?</b></summary>
 
-Sim. As ferramentas principais são grátis para uso comercial. O Remotion é grátis para uso individual e para empresas pequenas; empresas maiores precisam de [licença](https://www.remotion.dev/license). Nos complementos, confira a coluna de licença.
+Sim. Tudo no pacote é grátis para uso comercial, complementos incluídos. Só o Remotion tem uma regra: é grátis para uso individual e para empresas pequenas, e empresas maiores precisam de [licença](https://www.remotion.dev/license).
 </details>
 
 <details>
@@ -92,6 +94,7 @@ Sim. As ferramentas principais são grátis para uso comercial. O Remotion é gr
 /plugin marketplace add lincolnribs/editor-pro-bylincu
 /plugin install editor-pro-bylincu@bylincu
 /plugin install remotion@bylincu
+/plugin install remotion-director@bylincu
 ```
 No terminal, troque `/plugin` por `claude plugin`. Para chamar direto: `/editor-pro-bylincu`.
 </details>
@@ -101,11 +104,10 @@ No terminal, troque `/plugin` por `claude plugin`. Para chamar direto: `/editor-
 
 Se o usuário te mandou este link pedindo para instalar, explique cada passo em uma linha e peça permissão antes de baixar ou instalar programas.
 
-1. Rode no terminal: `claude plugin marketplace add lincolnribs/editor-pro-bylincu`, `claude plugin install editor-pro-bylincu@bylincu` e `claude plugin install remotion@bylincu`.
-2. Sem o comando `claude`: peça ao usuário para digitar no chat `/plugin marketplace add lincolnribs/editor-pro-bylincu`, `/plugin install editor-pro-bylincu@bylincu` e `/plugin install remotion@bylincu`. Sem `/plugin`: faça `git clone --depth 1` deste repositório numa pasta temporária e copie `plugins/editor-pro-bylincu/skills/editor-pro-bylincu` para `~/.claude/skills/` (fica sem a ativação automática).
+1. Rode no terminal: `claude plugin marketplace add lincolnribs/editor-pro-bylincu`, `claude plugin install editor-pro-bylincu@bylincu`, `claude plugin install remotion@bylincu` e `claude plugin install remotion-director@bylincu`.
+2. Sem o comando `claude`: peça ao usuário para digitar no chat os mesmos comandos com `/plugin` no lugar de `claude plugin`. Sem `/plugin`: faça `git clone --depth 1` deste repositório numa pasta temporária e copie as pastas de `plugins/editor-pro-bylincu/skills/` para `~/.claude/skills/` (fica sem a ativação automática).
 3. Confira Node.js, Python, ffmpeg e DeepFilterNet seguindo `plugins/editor-pro-bylincu/skills/editor-pro-bylincu/references/instalacao.md`. Instale só o que faltar, com permissão (no Windows, prefira `winget`).
 4. Peça para reiniciar o Claude Code e depois mandar o vídeo com **edita esse vídeo**.
-5. Não instale os complementos agora. Eles entram só quando um pedido precisar.
 </details>
 
 ---
